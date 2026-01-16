@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const morgan = require("morgan");
 const { noSqlSanitize } = require("./middleware/nosql-sanitize.middleware");
@@ -15,7 +15,7 @@ const { errorHandler } = require("./middleware/error.middleware");
 const app = express();
 
 app.set("trust proxy", 1);
-app.use(helmet());
+// app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json({ limit: "10kb" }));
 app.use(cookieParser());
