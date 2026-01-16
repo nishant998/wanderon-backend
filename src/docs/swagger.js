@@ -9,7 +9,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:4000",
+      url: "https://wanderon-backend-xpbk.onrender.com",
       description: "Local server",
     },
   ],
