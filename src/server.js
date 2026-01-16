@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const rateLimit = require("express-rate-limit");
+// const rateLimit = require("express-rate-limit");
 const morgan = require("morgan");
 
 const { connectDB } = require("./config/db");
@@ -45,14 +45,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.options(/.*/, cors(corsOptions));
 
-app.use(
-  rateLimit({
-    windowMs: 10 * 60 * 1000,
-    max: 200,
-    standardHeaders: true,
-    legacyHeaders: false,
-  })
-);
+// app.use(
+//   rateLimit({
+//     windowMs: 10 * 60 * 1000,
+//     max: 200,
+//     standardHeaders: true,
+//     legacyHeaders: false,
+//   })
+// );
 
 app.get("/", (req, res) =>
   res.json({ ok: true, name: "WanderOn Auth API" })
