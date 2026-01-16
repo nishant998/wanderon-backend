@@ -40,7 +40,6 @@ async function login({ email, password }) {
     "+passwordHash +refreshTokenHash"
   );
 
-  // don't reveal whether email exists
   if (!user) {
     const err = new Error("Invalid credentials");
     err.statusCode = 401;
